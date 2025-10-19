@@ -1,6 +1,5 @@
 /*
-  This program blinks pin 13 of the Arduino (the
-  built-in LED) 
+  This program blinks pin 13 of the Arduino
   
   The main theme is digitalWrite
 */
