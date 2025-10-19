@@ -1,0 +1,49 @@
+/*
+  This program turns ON and OFF LEDs connected to pins 13, 12, 11, and 10 in sequence.
+  
+  The main concept is digitalWrite(), which sets each pin to HIGH (1) or LOW (0).
+  The variable 'time' controls how long each LED stays ON before switching.
+*/
+
+int time = 100; // Time delay between LED changes in milliseconds = 100ms
+
+void setup() { 
+  
+// Set pins 13, 12, 11, and 10 as OUTPUT so they can power LEDs
+  pinMode(13, OUTPUT); 
+  pinMode(12, OUTPUT); 
+  pinMode(11, OUTPUT); 
+  pinMode(10, OUTPUT); 
+}
+void loop() { 
+ 
+ //Turn ON LED on pin 13,OFF LED on pins 12
+  digitalWrite(12, 0); 
+  digitalWrite(13, 1);  
+  delay(time); // Wait for 'time' milliseconds
+  
+//Turn ON LED on pin 12,OFF LED on pins 13
+  digitalWrite(13, 0); 
+  digitalWrite(12, 1); 
+  delay(time); // Wait for 'time' milliseconds 
+ 
+ //Turn ON LED on pin 11,OFF LED on pins 12
+  digitalWrite(12, 0); 
+  digitalWrite(11, 1);  
+  delay(time);  
+ 
+ //Turn ON LED on pin 10,OFF LED on pins 11
+  digitalWrite(11, 0); 
+  digitalWrite(10, 1); 
+  delay(time); // Wait for 'time' milliseconds 
+  
+//Go back in reverse order — turn ON pin 11,OFF LED on pins 10
+  digitalWrite(11, 1); 
+  digitalWrite(10, 0); 
+  delay(time); // Wait for 'time' milliseconds
+ 
+//Go back in reverse order — turn ON pin 12,OFF LED on pins 11
+  digitalWrite(12, 1); 
+  digitalWrite(11, 0); 
+  delay(time); // Wait for 'time' milliseconds
+}
