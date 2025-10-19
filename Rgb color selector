@@ -1,0 +1,32 @@
+/*
+  RGB LED Color Mixing
+
+  This program controls an RGB LED connected to pins 13 (Red), 11 (Green),
+  and 12 (Blue) using PWM signals.
+
+  The analogWrite() function lets you control brightness from 0–255:
+    - 0 = OFF
+    - 255 = FULL brightness
+
+  By mixing different brightness levels, you can create custom colors.
+*/
+
+int R = 13;  // Red LED pin
+int G = 11;  // Green LED pin
+int B = 12;  // Blue LED pin
+
+void setup() {
+  // Set each color pin as an output
+  pinMode(R, OUTPUT);
+  pinMode(G, OUTPUT);
+  pinMode(B, OUTPUT);
+}
+
+void loop() {
+  // Mix a custom color using PWM (0–255 brightness)
+  analogWrite(R, 255);  // Red at full brightness
+  analogWrite(G, 80);   // Green at medium brightness
+  analogWrite(B, 218);  // Blue at high brightness
+
+  // Result: a light pink color
+}
