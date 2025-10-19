@@ -1,0 +1,30 @@
+/*
+  Input Pullup Serial
+  This example demonstrates the use of pinMode(INPUT_PULLUP).
+  It reads a digital input on pin 2 (connected to a pushbutton)
+  and controls three LEDs on pins 13, 12, and 11.
+  Unlike pinMode(INPUT), there is no external pull-down resistor needed.
+  The Arduino has an internal ~20KΩ resistor connected to +5V.
+  This makes the input:
+    - HIGH (1) when the button is NOT pressed
+    - LOW (0) when the button IS pressed
+*/
+void setup() {
+  // Configure pin 2 as input with the internal pull-up resistor enabled
+  pinMode(2, INPUT_PULLUP);
+  // Configure pins 13, 12, and 11 as outputs for LEDs
+  pinMode(13, OUTPUT);
+  pinMode(12, OUTPUT);
+  pinMode(11, OUTPUT);
+}
+void loop() {
+  // Read the button state (HIGH when not pressed, LOW when pressed)
+  int sensorVal = digitalRead(2);
+  // LED on pin 13 always ON
+  digitalWrite(13, 1);
+  // LED on pin 12 lights up when the button IS pressed
+
+  digitalWrite(12, !sensorVal);
+  // LED on pin 11 lights up when the button is NOT pressed
+  digitalWrite(11, sensorVal);
+}
