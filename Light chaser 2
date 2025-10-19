@@ -1,8 +1,7 @@
 /*
   This program turns ON and OFF LEDs connected to pins 13, 12, 11, and 10 in sequence.
   
-  The main concept is digitalWrite(), which sets each pin to HIGH (1) or LOW (0).
-  The variable 'time' controls how long each LED stays ON before switching.
+  only difference is that we added another led
 */
 
 int time = 100; // Time delay between LED changes in milliseconds = 100ms
