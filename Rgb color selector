@@ -28,5 +28,5 @@ void loop() {
   analogWrite(G, 80);   // Green at medium brightness
   analogWrite(B, 218);  // Blue at high brightness
 
-  // Result: a light pink color
+  // Result: pink 
 }
